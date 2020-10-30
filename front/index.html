@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="interfaceApp">
+<head>
+	<title>Nautilux Interface</title>
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="style.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.min.js"></script>
+	<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.9.0.js"></script>
+	<script src="app.js"></script>
+</head>
+<body class="container-fluid">
+	<div class="main">
+		<div class="header row col-12">
+			<img src="/media/logo.png">
+		</div>
+		<div class="interface row col-12"><h3> Liste des interventions</h3></div>
+		<div class="interface__tri row col-12">
+			<p>Tri</p>
+			<select ng-model="tri">
+					<option value="-date_crea">Plus récent</option>
+					<option value="date_crea">Moins récent</option>
+			</select>				
+		</div>
+		<div class="interface__table row col-12" ng-controller="intervCtrl">
+			<table>
+				<thead>
+				<tr>
+					<th>Statut</th>
+				  	<th>Libelle</th>
+				  	<th>Description</th>
+				  	<th>Intervenant</th>
+				  	<th>Lieu</th>
+				  	<th>Date intervention</th>
+				  	<th>Date Création</th>
+				</tr>
+  				</thead>
+  				  <tbody>
+				  <tr ng-repeat="intervention in interventions | orderBy: tri" ng-controller="modalAccountFormController" ng-click="modifyForm(intervention.id)">
+					<td>{{intervention.statut}}</td>
+					<td>{{intervention.libelle}}</td>
+					<td>{{intervention.description}}</td>
+					<td>{{intervention.nom_inter}}</td>
+					<td>{{intervention.lieu}}</td>
+					<td>{{intervention.date_inter | date: "dd/MM/yyyy"}}</td>
+					<td>{{intervention.date_crea | date: "dd/MM/yyyy à HH:mm"}}</td>
+				  </tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="infos row col-12">
+			<p>Appuyez sur une ligne pour modifier ou supprimer l'intervention</p>
+		</div>
+		<div class="interface row col-12" ng-controller="modalAccountFormController">
+			<button class="btn btn-primary" ng-click="showForm()">Nouvelle Intervention</button>
+		</div>
+
+	</div>
+
+
+</body>
+</html>

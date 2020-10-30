@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h3>Modifier l'intervention</h3>
+</div>
+<div class="modal-body">
+        <!-- LIBELLE -->
+        <div class="form-group">
+            <label>Libelle</label>
+            <input type="text" name="name" class="form-control" ng-model="libelle" />
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" ng-model="description" />
+        </div>
+
+        <!-- INTERVENANT -->
+        <div class="form-group">
+            <label>Intervenant</label> 
+            <input type="text" class="form-control" ng-model="nom_inter" />
+        </div>
+
+        <!-- LIEU -->
+        <div class="form-group">
+            <label>Lieu</label>
+            <input type="text" class="form-control" ng-model="lieu"/>
+        </div>
+
+        <!-- DATE INTERVENTION -->
+        <div class="form-group">
+            <label>Date de l'intervention</label>
+            <input type="date" placeholder="yyyy/MM/dd" class="form-control" datetime="yyyy-MM-dd" ng-model="date_inter" />
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="putInterv(id,libelle,description,nom_inter,lieu,date_inter)">OK</button>
+        <button class="btn btn-warning" ng-click="delete(id)">Supprimer</button>
+</div>
