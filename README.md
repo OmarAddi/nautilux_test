@@ -7,7 +7,7 @@
 ### Lancement du back:
 
 Dans le dossier back, activez l'environnement virtuel:
-source env/bin/activate
+`<addr>` source env/bin/activate
 
 Dans le dossier nautilux_back, lancez le serveur Django:
 python manage.py runserver
