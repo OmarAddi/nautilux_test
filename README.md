@@ -10,7 +10,7 @@ Dans le dossier back, activez l'environnement virtuel:
 `source env/bin/activate`
 
 Dans le dossier nautilux_back, lancez le serveur Django:
-python manage.py runserver
+`python manage.py runserver`
 
 
 ## Front-end AngularJS:
@@ -18,4 +18,4 @@ python manage.py runserver
 
 ### Lancement du front:
 Dans le dossier, exécutez la commande suivante:
-http-server
+`http-server`
