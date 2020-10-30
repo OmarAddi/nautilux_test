@@ -14,16 +14,19 @@ class IntervViewSet(viewsets.ModelViewSet):
 	queryset = Intervention.objects.all()
 	serializer_class = IntervSerializer
 
-
+	#overload of create function
+	#This function is called during a post request
 	def create(self, request): 
 		post_data = request.data
 		now=datetime.datetime.now()
 		statut = "V"
+		#check if in data of post request, there is a null value to define the statut
 		for value in post_data:
 			if post_data[value] is None :
 				statut = "B"
 				break
 		if post_data['date_inter'] is not None:
+			#check if the date of intervention is pasted 
 			date_inter = datetime.datetime.strptime(post_data['date_inter'], '%Y-%m-%dT%H:%M:%S.%fZ')
 			if(date_inter<now):
 				statut = "T"
