@@ -61,7 +61,7 @@
 
 		var ModalInstanceCtrl = function ($scope, $http, $modalInstance) {
 
-			// Request to get the data from the api
+		// Request to get the data from the api
 		    $scope.postInterv = function (libelle,description,nom_inter,lieu,date_inter) {
 		    	var data = {
 		    		libelle		: libelle,
@@ -86,13 +86,13 @@
 		    };
 
 		    //function to delete an intervention 
-		    //Take the parameter of the intervention and do delete request to the api and close the modal
+		    //Take the parameter of the intervention and do a delete request to the api and close the modal
 		    $scope.delete = function (id) {
 		    	$http.delete("http://127.0.0.1:8000/" +id+ "/")
 		    	$modalInstance.dismiss('cancel');
  		    };
 
- 		    //
+ 		    //function to modify an intervention
  		    $scope.putInterv = function (id,libelle,description,nom_inter,lieu,date_inter) {
 		    	var data = {
 		    		libelle		: libelle,
