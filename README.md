@@ -1,8 +1,8 @@
 # Nautilux
 
 ## Back-end Django:
--Python version 2.7
--Django version 1.11
+*Python version 2.7
+*Django version 1.11
 
 ### Lancement du back:
 
@@ -14,7 +14,7 @@ python manage.py runserver
 
 
 ## Front-end AngularJS:
--AngularJS 1.7
+*AngularJS 1.7
 
 ### Lancement du front:
 Dans le dossier, exécutez la commande suivante:
