@@ -17,5 +17,5 @@ Dans le dossier nautilux_back, lancez le serveur Django:
 * AngularJS 1.7
 
 ### Lancement du front:
-Dans le dossier, exécutez la commande suivante:
+Dans le dossier front, exécutez la commande suivante:
 `http-server`
